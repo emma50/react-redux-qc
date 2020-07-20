@@ -6,7 +6,7 @@ const validateUser = Joi.object({
   password: Joi.string().min(6).max(255).required(),
   email: Joi.string().min(4).max(255).required(),
   address: Joi.string().min(6).required(),
-  mobileno: Joi.number().min(10).required(),
+  mobileno: Joi.number().integer().min(1000000000).required(),
 });
 
 export default validateUser;
