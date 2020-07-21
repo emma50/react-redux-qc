@@ -20,11 +20,11 @@ export function userSignupFailure(error) {
 
 export function signupUser(data) {
   return function (dispatch) {
-    const { firstname, lastname, email, password, address, mobileno, } = data
-    const user = { firstname, lastname, email, password, address, mobileno, }
+    const { firstName, lastName, email, password, address, mobileno, } = data
+    const user = { firstName, lastName, email, password, address, mobileno, }
     const body = {
-      firstName: user.firstname,
-      lastName: user.lastname,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
       password: user.password,
       address: user.address,
@@ -34,15 +34,12 @@ export function signupUser(data) {
       headers: {'Content-Type': 'application/json'},
     },)
       .then((response) => {
-        console.log(response);
-        console.log(response.data);
         console.log(response.data.data);
         dispatch(userSignupSuccess(response));
         toast.success(response.data.message); 
       }).catch((error) => {
-        console.log(error.message)
-        dispatch(userSignupFailure(error.message));
-        toast.success(error.message);
+        dispatch(userSignupFailure(error.response.data.error));
+        toast.success(error.response.data.error);
       })
   }
 }

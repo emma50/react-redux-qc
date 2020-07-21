@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
+import { joiResolver } from '@hookform/resolvers';
 import { ToastContainer} from 'react-toastify';
 import Avatar from '@material-ui/core/Avatar';
 // import Alert from '@material-ui/lab/Alert';
@@ -31,6 +32,9 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  error: {
+    background: 'yellow',
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -52,8 +56,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
-  const { register, handleSubmit, } = useForm({
-    validationSchema: validateUser,
+  const { register, handleSubmit, errors, } = useForm({
+    resolver: joiResolver(validateUser)
+    // validationSchema: validateUser,
   });
   const dispatch = useDispatch();
 
@@ -61,6 +66,8 @@ export default function SignUp() {
     e.preventDefault();
     dispatch(signupUser(data));
   }
+
+  console.log(errors)
 
   return (
     <div>
@@ -87,13 +94,18 @@ export default function SignUp() {
         </div>
         <div>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+            {errors.firstName && <Typography className={classes.error}>{errors.firstName.message}</Typography>}
+            {errors.lastName && <Typography className={classes.error}>{errors.lastName.message}</Typography>}
+            {errors.email  && <Typography className={classes.error}>{errors.email.message}</Typography>}
+            {errors.password && <Typography className={classes.error}>{errors.password.message}</Typography>}
+            {errors.mobileno && <Typography className={classes.error}>{errors.mobileno.message}</Typography>}
+            {errors.address && <Typography className={classes.error}>{errors.address.message}</Typography>}
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   inputRef={register}
-                  // error={errors.firstname ? 'true' : 'false'}
                   autoComplete="fname"
-                  name="firstname"
+                  name="firstName"
                   variant="outlined"
                   required
                   fullWidth
@@ -105,20 +117,18 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   inputRef={register}
-                  // error={errors.lasttname ? 'true' : 'false'}
                   variant="outlined"
                   required
                   fullWidth
                   id="lastname"
                   label="Last Name"
-                  name="lastname"
+                  name="lastName"
                   autoComplete="lname"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   inputRef={register}
-                  // error={errors.email ? 'true' : 'false'}
                   variant="outlined"
                   required
                   fullWidth
@@ -131,13 +141,11 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   inputRef={register}
-                  // error={errors.password ? 'true' : 'false'}
                   variant="outlined"
                   required
                   fullWidth
                   name="password"
                   label="Password"
-                  // type="password"
                   id="password"
                   autoComplete="current-password"
                 />
@@ -145,7 +153,6 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   inputRef={register}
-                  // error={errors.mobileno ? 'true' : 'false'}
                   variant="outlined"
                   required
                   fullWidth
@@ -158,7 +165,6 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   inputRef={register}
-                  // error={errors.address ? 'true' : 'false'}
                   name="address"
                   variant="outlined"
                   required
