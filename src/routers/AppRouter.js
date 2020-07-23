@@ -7,6 +7,7 @@ import {
 import history from "../helpers/history"
 const HomePage = lazy(() => import("../components/pages/public/HomePage"))
 const SignupPage = lazy(() => import("../components/pages/public/SignupPage"))
+const SigninPage = lazy(() => import("../components/pages/public/SigninPage"))
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Switch>
           <Route path="/" component={HomePage} exact={true}/>
           <Route path="/signup" component={SignupPage} exact={true}/>
+          <Route path="/signin" component={SigninPage} exact={true}/>
         </Switch>
       </Suspense>
     </Router>
