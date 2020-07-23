@@ -14,6 +14,16 @@ export default (state = initialState, action) => {
         ...state,
         action.error
       ]
+    case ACTIONS.USER_SIGNIN_SUCCESS : 
+      return [
+        ...state,
+        action.user
+      ]
+    case ACTIONS.USER_SIGNIN_FAILURE : 
+      return [
+        ...state,
+        action.error
+      ]
     default:
       return state
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
 import { joiResolver } from '@hookform/resolvers';
 import { ToastContainer} from 'react-toastify';
@@ -67,21 +68,9 @@ export default function SignUp() {
     dispatch(signupUser(data));
   }
 
-  console.log(errors)
-
   return (
     <div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -186,7 +175,7 @@ export default function SignUp() {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signin" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
@@ -199,4 +188,15 @@ export default function SignUp() {
       </Container>
     </div>
   );
+}
+
+SignUp.propTypes = {
+  validateUsers: PropTypes.object,
+  signupUser: PropTypes.func,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  mobileno: PropTypes.number,
+  address: PropTypes.string,
 }

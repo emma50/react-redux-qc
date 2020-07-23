@@ -83,32 +83,32 @@ export default function MediaCard() {
       <Typography className={classes.desktopTestimonial}>
         Testimonials
       </Typography>
-    <div className={classes.div}>
-      <Typography className={classes.testimonial}>
-        Testimonials
-      </Typography>
-      {data.map((item) => {
-        return (
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={item.img}
-                title={item.title}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h6" component="h4">
-                  {item.name}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {item.comment}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        )
-      })}
-    </div>
+      <div className={classes.div}>
+        <Typography className={classes.testimonial}>
+          Testimonials
+        </Typography>
+        {data.map((item) => {
+          return (
+            <Card className={classes.root} key={item.id}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={item.img}
+                  title={item.title}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h4">
+                    {item.name}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {item.comment}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          )
+        })}
+      </div>
     </div>
   );
 }
