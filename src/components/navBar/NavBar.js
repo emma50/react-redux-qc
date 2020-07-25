@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
@@ -105,7 +106,8 @@ const useStyles = makeStyles((theme) => ({
   // },
 }));
 
-export default function PersistentDrawerRight() {
+export default function PersistentDrawerRight(props) {
+  const history = useHistory()
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -159,7 +161,7 @@ export default function PersistentDrawerRight() {
           </div>
           <Divider />
           <List>
-            {['Apply Now', 'Home', 'Contact', 'Login', 'Register'].map((text, index) => (
+            {['Apply Now', 'Home', 'Contact', 'Login', 'Register'].map((text, index, array) => (
               <ListItem button key={text}>
                 <ListItemText primary={text}/>
               </ListItem>
@@ -174,11 +176,40 @@ export default function PersistentDrawerRight() {
               <Button color="inherit" style={{'fontSize': 'small'}}>QUICK CREDIT</Button>
             </Typography>
             <Typography>
-              <Button color="inherit" className={classes.desktopTitle}>Apply Now</Button>
-              <Button color="inherit" className={classes.fontSize}>Home</Button>
-              <Button color="inherit" className={classes.fontSize}>Contact</Button>
-              <Button color="inherit" className={classes.fontSize}>Login</Button>
-              <Button color="inherit" className={classes.fontSize}>Register</Button>
+              <Button 
+                color="inherit" 
+                className={classes.desktopTitle} 
+                onClick={() => history.push('/applyforloan')}
+              > 
+                Apply Now
+              </Button>
+              <Button 
+                color="inherit" 
+                className={classes.fontSize} 
+                onClick={() => history.push('/')}
+              >
+                Home
+              </Button>
+              <Button 
+                color="inherit" 
+                className={classes.fontSize}
+              >
+                Contact
+              </Button>
+              <Button 
+                color="inherit" 
+                className={classes.fontSize} 
+                onClick={() => history.push('/signin')}
+              >
+                Login
+              </Button>
+              <Button 
+                color="inherit" 
+                className={classes.fontSize}
+                onClick={() => history.push('/signup')}
+              > 
+                Register
+              </Button>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -186,3 +217,9 @@ export default function PersistentDrawerRight() {
     </div>
   );
 }
+
+/**
+ * <ListItem button key={text}>
+    <ListItemText primary={text}/>
+   </ListItem>
+ */
