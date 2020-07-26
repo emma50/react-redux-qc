@@ -21,15 +21,12 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: '100vw',
-    // display: 'flex',
     // overflowX: 'hidden',
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
   },
   appBar: {
-    overFlow: 'none',//
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -161,8 +158,13 @@ export default function PersistentDrawerRight(props) {
           </div>
           <Divider />
           <List>
-            {['Apply Now', 'Home', 'Contact', 'Login', 'Register'].map((text, index, array) => (
-              <ListItem button key={text}>
+            {['Apply Now', 'Home', 'Contact', 'Login', 'Register'].map((text) => (
+              <ListItem button key={text} onClick={(text) => {
+                if (text === 'Apply Now') history.push('/applyforloan');
+                if (text === 'Home') history.push('/');
+                if (text === 'Login') history.push('/signin');
+                if (text === 'Register') history.push('/signup')
+              }}>
                 <ListItemText primary={text}/>
               </ListItem>
             ))}
@@ -217,9 +219,3 @@ export default function PersistentDrawerRight(props) {
     </div>
   );
 }
-
-/**
- * <ListItem button key={text}>
-    <ListItemText primary={text}/>
-   </ListItem>
- */

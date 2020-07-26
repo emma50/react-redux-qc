@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import * as ACTION from './actionTypes';
-import history from '../helpers/history';
+import location from '../helpers/location';
 
-const  userapplyforloansuccessOption= {
+const userapplyforloansuccessOption= {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -11,10 +11,10 @@ const  userapplyforloansuccessOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: () => history.push('/signin'),
+  onClose: location('http://localhost:3001/'),
 }
 
-const  userapplyforloanfailureOption= {
+const userapplyforloanfailureOption= {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -22,26 +22,21 @@ const  userapplyforloanfailureOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: () => history.push('/'),
+  onClose: location('http://localhost:3001/'),
 }
 
-export function userApplyForLoanSuccess(loan) {
-  return {
-    type: ACTION.USER_APPLY_FOR_LOAN_SUCCESS,
-    loan,
-  }
-}
+export const userApplyForLoanSuccess = (loan) => ({
+  type: ACTION.USER_APPLY_FOR_LOAN_SUCCESS,
+  loan,
+})
   
-export function userApplyForLoanFailure(error) {
-  return {
-    type: ACTION.USER_APPLY_FOR_LOAN_FAILURE,
-    error,
-  }
-}
+export const userApplyForLoanFailure = (error) => ({
+  type: ACTION.USER_APPLY_FOR_LOAN_FAILURE,
+  error,
+})
 
-
-export function userApplyForLoan(data) {
-  return function (dispatch) {
+export const userApplyForLoan = (data) => {
+  return (dispatch) => {
     const { amount, tenor, } = data
     const loan = { amount, tenor, }
     const body = {
@@ -55,8 +50,7 @@ export function userApplyForLoan(data) {
       },
     },)
       .then((response) => {
-        console.log(response.data.data);
-        dispatch(userApplyForLoanSuccess(response));
+        dispatch(userApplyForLoanSuccess(response.data));
         toast.success(response.data.message, userapplyforloansuccessOption)
       }).catch((error) => {
         if (error.response.data.message) {

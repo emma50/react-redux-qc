@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as ACTION from './actionTypes';
 import { toast } from 'react-toastify';
-import history from "../helpers/history"
+import location from '../helpers/location';
 
-const  signupOption= {
+const signupOption= {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -11,10 +11,10 @@ const  signupOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: () => history.push('/signin'),
+  onClose: location('http://localhost:3001/signin'),
 }
 
-const  signinOption= {
+const signinOption= {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -22,10 +22,10 @@ const  signinOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: () => history.push('/'),
+  onClose: location('http://localhost:3001/'),
 }
 
-export function userSignupSuccess(user) {
+export const userSignupSuccess = (user) => {
   localStorage.setItem('token', user.data.data.token);
   return {
     type: ACTION.USER_SIGNUP_SUCCESS,
@@ -33,16 +33,14 @@ export function userSignupSuccess(user) {
   }
 }
   
-export function userSignupFailure(error) {
-  return {
-    type: ACTION.USER_SIGNUP_FAILURE,
-    error,
-  }
-}
+export const userSignupFailure = (error) => ({
+  type: ACTION.USER_SIGNUP_FAILURE,
+  error,
+})
 
 
-export function signupUser(data) {
-  return function (dispatch) {
+export const signupUser = (data) => {
+  return (dispatch) => {
     const { firstName, lastName, email, password, address, mobileno, } = data
     const user = { firstName, lastName, email, password, address, mobileno, }
     const body = {
@@ -57,9 +55,7 @@ export function signupUser(data) {
       headers: {'Content-Type': 'application/json'},
     },)
       .then((response) => {
-        console.log(response.data.data);
-        dispatch(userSignupSuccess(response));
-        // toast.success(response.data.message); 
+        dispatch(userSignupSuccess(response.data)); 
         toast.success(response.data.message, signupOption)
       }).catch((error) => {
         dispatch(userSignupFailure(error.response.data.error));
@@ -68,7 +64,7 @@ export function signupUser(data) {
   }
 }
 
-export function userSigninSuccess(user) {
+export const userSigninSuccess = (user) => {
   localStorage.setItem('token', user.data.data.token);
   return {
     type: ACTION.USER_SIGNIN_SUCCESS,
@@ -76,16 +72,14 @@ export function userSigninSuccess(user) {
   }
 }
   
-export function userSigninFailure(error) {
-  return {
-    type: ACTION.USER_SIGNIN_FAILURE,
-    error,
-  }
-}
+export const userSigninFailure = (error) => ({
+  type: ACTION.USER_SIGNIN_FAILURE,
+  error,
+})
 
 
-export function signinUser(data) {
-  return function (dispatch) {
+export const signinUser = (data) => {
+  return (dispatch) => {
     const { email, password, } = data
     const user = { email, password, }
     const body = {
@@ -96,14 +90,9 @@ export function signinUser(data) {
       headers: {'Content-Type': 'application/json'},
     },)
       .then((response) => {
-        console.log(response)
-        console.log(response.data.data);
-        dispatch(userSigninSuccess(response));
-        // toast.success(response.data.message); 
+        dispatch(userSigninSuccess(response.data)); 
         toast.success(response.data.message, signinOption)
       }).catch((error) => {
-        console.log(error)
-        console.log(error.response)
         dispatch(userSigninFailure(error.response.data.error));
         toast.error(error.response.data.error);
       })
