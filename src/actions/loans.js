@@ -11,10 +11,10 @@ const userapplyforloansuccessOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: location('http://localhost:3001/'),
+  onClose: () => location('http://localhost:3001/'),
 }
 
-const userapplyforloanfailureOption= {
+const userapplyforloanfailureOption = {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -22,7 +22,6 @@ const userapplyforloanfailureOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: location('http://localhost:3001/'),
 }
 
 export const userApplyForLoanSuccess = (loan) => ({

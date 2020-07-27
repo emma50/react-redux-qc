@@ -3,7 +3,7 @@ import * as ACTION from './actionTypes';
 import { toast } from 'react-toastify';
 import location from '../helpers/location';
 
-const signupOption= {
+const signupOption = {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -11,10 +11,11 @@ const signupOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: location('http://localhost:3001/signin'),
+  onClose: () => location('http://localhost:3001/signin'),
 }
 
-const signinOption= {
+
+const failureOption = {
   position: "top-right",
   autoClose: 5000,
   hideProgressBar: false,
@@ -22,11 +23,21 @@ const signinOption= {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: location('http://localhost:3001/'),
+}
+
+const signinOption = {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  onClose: () => location('http://localhost:3001/'),
 }
 
 export const userSignupSuccess = (user) => {
-  localStorage.setItem('token', user.data.data.token);
+  localStorage.setItem('token', user.data.token);
   return {
     type: ACTION.USER_SIGNUP_SUCCESS,
     user,
@@ -58,14 +69,18 @@ export const signupUser = (data) => {
         dispatch(userSignupSuccess(response.data)); 
         toast.success(response.data.message, signupOption)
       }).catch((error) => {
+        if (error.response.data.message) {
+          dispatch(userSignupFailure(error.response.data.message, failureOption));
+          toast.error(error.response.data.message);
+        }
         dispatch(userSignupFailure(error.response.data.error));
-        toast.error(error.response.data.error);
+        toast.error(error.response.data.error, failureOption);
       })
   }
 }
 
 export const userSigninSuccess = (user) => {
-  localStorage.setItem('token', user.data.data.token);
+  localStorage.setItem('token', user.data.token);
   return {
     type: ACTION.USER_SIGNIN_SUCCESS,
     user,
@@ -93,8 +108,12 @@ export const signinUser = (data) => {
         dispatch(userSigninSuccess(response.data)); 
         toast.success(response.data.message, signinOption)
       }).catch((error) => {
+        if (error.response.data.message) {
+          dispatch(userSigninFailure(error.response.data.message));
+          toast.error(error.response.data.message, failureOption);
+        }
         dispatch(userSigninFailure(error.response.data.error));
-        toast.error(error.response.data.error);
+        toast.error(error.response.data.error, failureOption);
       })
   }
 }

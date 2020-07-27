@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
@@ -96,6 +96,10 @@ const useStyles = makeStyles((theme) => ({
   fontSize: {
     fontSize: 'small',
   },
+  link: {
+    textDecoration: 'none',
+    color: 'white',
+  },
   // hiddenForMobile: {
   //   [theme.breakpoints.down('sm')]: {
   //     display: 'none',
@@ -158,15 +162,18 @@ export default function PersistentDrawerRight(props) {
           </div>
           <Divider />
           <List>
-            {['Apply Now', 'Home', 'Contact', 'Login', 'Register'].map((text) => (
-              <ListItem button key={text} onClick={(text) => {
-                if (text === 'Apply Now') history.push('/applyforloan');
-                if (text === 'Home') history.push('/');
-                if (text === 'Login') history.push('/signin');
-                if (text === 'Register') history.push('/signup')
-              }}>
-                <ListItemText primary={text}/>
-              </ListItem>
+            {[
+              { text: 'Apply Now', url: '/applyforloan' }, 
+              { text: 'Home', url: '/' },
+              { text: 'Contact', url: '' },
+              { text: 'Login', url: '/signin' },
+              { text: 'Register', url: '/signup' },
+             ].map((item, index) => (
+              <Link to={item.url} key={index} style={{'color': 'black', 'textDecoration': 'none'}}>
+                <ListItem button>
+                  <ListItemText primary={item.text}/>
+                </ListItem>
+              </Link>
             ))}
           </List>
         </Drawer>
@@ -179,34 +186,43 @@ export default function PersistentDrawerRight(props) {
             </Typography>
             <Typography>
               <Button 
-                color="inherit" 
-                className={classes.desktopTitle} 
-                onClick={() => history.push('/applyforloan')}
+                //to='/applyforloan'
+                color="inherit"
+                // className={clsx(classes.desktopTitle, classes.link)}
+                className={classes.desktopTitle}
+                onClick={() => history.push('/applyforloan')} 
               > 
                 Apply Now
               </Button>
               <Button 
+                //to='/'
                 color="inherit" 
-                className={classes.fontSize} 
+                //className={clsx(classes.fontSize, classes.link)} 
+                className={classes.fontSize}
                 onClick={() => history.push('/')}
               >
                 Home
               </Button>
               <Button 
                 color="inherit" 
-                className={classes.fontSize}
+                //className={clsx(classes.fontSize, classes.link)}
+                classNname={classes.fontSize}
               >
                 Contact
               </Button>
               <Button 
+                // to='signin'
                 color="inherit" 
-                className={classes.fontSize} 
+                //className={clsx(classes.fontSize, classes.link)} 
+                className={classes.fontSize}
                 onClick={() => history.push('/signin')}
               >
                 Login
               </Button>
-              <Button 
+              <Button
+                //to='/signup' 
                 color="inherit" 
+                //className={clsx(classes.fontSize, classes.link)}
                 className={classes.fontSize}
                 onClick={() => history.push('/signup')}
               > 

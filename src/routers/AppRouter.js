@@ -1,10 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { 
-  BrowserRouter as Router, 
+  BrowserRouter as Router,
   Route, 
   Switch 
 } from "react-router-dom"
-import history from "../helpers/history"
 const HomePage = lazy(() => import("../components/pages/public/HomePage"));
 const SignupPage = lazy(() => import("../components/pages/public/SignupPage"));
 const SigninPage = lazy(() => import("../components/pages/public/SigninPage"));
@@ -12,13 +11,13 @@ const ApplyForLoanPage = lazy(() => import("../components/pages/public/ApplyForL
 
 const AppRouter = () => {
   return (
-    <Router history={history}>
+    <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" component={HomePage} exact={true}/>
-          <Route path="/signup" component={SignupPage}/>
-          <Route path="/signin" component={SigninPage}/>
-          <Route path="/applyforloan" component={ApplyForLoanPage}/>
+          <Route path="/signup" component={SignupPage} exact={true}/>
+          <Route path="/signin" component={SigninPage} exact={true}/>
+          <Route path="/applyforloan" component={ApplyForLoanPage} exact={true}/>
         </Switch>
       </Suspense>
     </Router>
