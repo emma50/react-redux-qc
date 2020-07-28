@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 234,
     margin: `${theme.spacing(4)}px auto`,
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(1),
+      marginTop: `${theme.spacing(1)}px`,
     },
   },
   media: {

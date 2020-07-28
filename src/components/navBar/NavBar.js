@@ -95,16 +95,15 @@ const useStyles = makeStyles((theme) => ({
   },
   fontSize: {
     fontSize: 'small',
+    fontWeight: 'bold',
+  },
+  fontWeight: {
+    fontWeight: 'bold',
   },
   link: {
     textDecoration: 'none',
     color: 'white',
   },
-  // hiddenForMobile: {
-  //   [theme.breakpoints.down('sm')]: {
-  //     display: 'none',
-  //   },
-  // },
 }));
 
 export default function PersistentDrawerRight(props) {
@@ -182,22 +181,18 @@ export default function PersistentDrawerRight(props) {
         <AppBar position="fixed" className={classes.hiddenForMobile}>
           <Toolbar>
             <Typography variant="h6" className={classes.desktopTitle}>
-              <Button color="inherit" style={{'fontSize': 'small'}}>QUICK CREDIT</Button>
+              <Button color="inherit" style={{'fontSize': 'small', 'fontWeight': 'bold'}}>QUICK CREDIT</Button>
             </Typography>
             <Typography>
               <Button 
-                //to='/applyforloan'
                 color="inherit"
-                // className={clsx(classes.desktopTitle, classes.link)}
-                className={classes.desktopTitle}
+                className={clsx(classes.desktopTitle, classes.fontWeight)}
                 onClick={() => history.push('/applyforloan')} 
               > 
                 Apply Now
               </Button>
               <Button 
-                //to='/'
                 color="inherit" 
-                //className={clsx(classes.fontSize, classes.link)} 
                 className={classes.fontSize}
                 onClick={() => history.push('/')}
               >
@@ -205,24 +200,19 @@ export default function PersistentDrawerRight(props) {
               </Button>
               <Button 
                 color="inherit" 
-                //className={clsx(classes.fontSize, classes.link)}
-                classNname={classes.fontSize}
+                className={classes.fontSize}
               >
                 Contact
               </Button>
               <Button 
-                // to='signin'
-                color="inherit" 
-                //className={clsx(classes.fontSize, classes.link)} 
+                color="inherit"  
                 className={classes.fontSize}
                 onClick={() => history.push('/signin')}
               >
                 Login
               </Button>
               <Button
-                //to='/signup' 
                 color="inherit" 
-                //className={clsx(classes.fontSize, classes.link)}
                 className={classes.fontSize}
                 onClick={() => history.push('/signup')}
               > 

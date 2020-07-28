@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 // import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -109,11 +110,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <div>
       <div className={classes.cta}>
-        <Button variant="contained" color='primary' className={classes.ctaButton}>apply now</Button>
+        <Button 
+          variant="contained" 
+          color='primary' 
+          onClick={() => history.push('/applyforloan')}
+          className={classes.ctaButton}
+        >
+          apply now
+        </Button>
       </div>
       <div className={classes.root}>
         <div className={classes.paper}>
