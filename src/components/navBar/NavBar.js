@@ -1,7 +1,8 @@
 import React from 'react';
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -106,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerRight(props) {
+export default function NavBar() {
   const history = useHistory()
   const classes = useStyles();
   const theme = useTheme();
@@ -168,7 +169,12 @@ export default function PersistentDrawerRight(props) {
               { text: 'Login', url: '/signin' },
               { text: 'Register', url: '/signup' },
              ].map((item, index) => (
-              <Link to={item.url} key={index} style={{'color': 'black', 'textDecoration': 'none'}}>
+              <Link 
+                color="inherit"
+                style={{'color': 'black', 'textDecoration': 'none'}}
+                onClick={() => history.push(item.url)}
+                key={index} 
+              > 
                 <ListItem button>
                   <ListItemText primary={item.text}/>
                 </ListItem>

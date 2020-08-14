@@ -11,7 +11,7 @@ const signupOption = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  onClose: () => location('http://localhost:3001/signin'),
+  // onClose: () => location('http://localhost:3001/signin'),
 }
 
 
@@ -37,7 +37,7 @@ const signinOption = {
 }
 
 export const userSignupSuccess = (user) => {
-  localStorage.setItem('token', user.data.token);
+  localStorage.setItem('token', user.token);
   return {
     type: ACTION.USER_SIGNUP_SUCCESS,
     user,
@@ -52,8 +52,8 @@ export const userSignupFailure = (error) => ({
 
 export const signupUser = (data) => {
   return (dispatch) => {
-    const { firstName, lastName, email, password, address, mobileno, } = data
-    const user = { firstName, lastName, email, password, address, mobileno, }
+    const { firstName, lastName, email, password, address, mobileno } = data
+    const user = { firstName, lastName, email, password, address, mobileno }
     const body = {
       firstName: user.firstName,
       lastName: user.lastName,
@@ -66,21 +66,29 @@ export const signupUser = (data) => {
       headers: {'Content-Type': 'application/json'},
     },)
       .then((response) => {
-        dispatch(userSignupSuccess(response.data)); 
+        console.log(response)
+        console.log(response.data);
+        dispatch(userSignupSuccess(response.data.data)); 
         toast.success(response.data.message, signupOption)
       }).catch((error) => {
+        console.log(error)
+        console.log(error.response)
         if (error.response.data.message) {
           dispatch(userSignupFailure(error.response.data.message, failureOption));
-          toast.error(error.response.data.message);
+          toast.error(error.response.data.message, failureOption);
         }
-        dispatch(userSignupFailure(error.response.data.error));
-        toast.error(error.response.data.error, failureOption);
+        if (error.response.data.error) {
+          dispatch(userSignupFailure(error.response.data.error, failureOption));
+          toast.error(error.response.data.error, failureOption);
+        }
+        // dispatch(userSignupFailure(error.response.data.error));
+        // toast.error(error.response.data.error, failureOption);
       })
   }
 }
 
 export const userSigninSuccess = (user) => {
-  localStorage.setItem('token', user.data.token);
+  localStorage.setItem('token', user.token);
   return {
     type: ACTION.USER_SIGNIN_SUCCESS,
     user,
@@ -105,7 +113,7 @@ export const signinUser = (data) => {
       headers: {'Content-Type': 'application/json'},
     },)
       .then((response) => {
-        dispatch(userSigninSuccess(response.data)); 
+        dispatch(userSigninSuccess(response.data.data)); 
         toast.success(response.data.message, signinOption)
       }).catch((error) => {
         if (error.response.data.message) {
