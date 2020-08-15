@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create MediaCard snapshot 1`] = `
+<div>
+  <p
+    className="MuiTypography-root makeStyles-desktopTestimonial-3 MuiTypography-body1"
+  >
+    Testimonials
+  </p>
+  <div
+    className="makeStyles-div-1"
+  >
+    <p
+      className="MuiTypography-root makeStyles-testimonial-2 MuiTypography-body1"
+    >
+      Testimonials
+    </p>
+    <div
+      className="MuiPaper-root MuiCard-root makeStyles-root-4 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <button
+        className="MuiButtonBase-root MuiCardActionArea-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="MuiCardMedia-root makeStyles-media-5"
+          style={
+            Object {
+              "backgroundImage": "url(\\"./images/person.png\\")",
+            }
+          }
+          title="xyz"
+        />
+        <div
+          className="MuiCardContent-root"
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom"
+          >
+            Tony Tony
+          </h4>
+          <p
+            className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Probably the most random thing you have ever seen!
+          </p>
+        </div>
+        <span
+          className="MuiCardActionArea-focusHighlight"
+        />
+      </button>
+    </div>
+    <div
+      className="MuiPaper-root MuiCard-root makeStyles-root-4 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <button
+        className="MuiButtonBase-root MuiCardActionArea-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="MuiCardMedia-root makeStyles-media-5"
+          style={
+            Object {
+              "backgroundImage": "url(\\"./images/person.png\\")",
+            }
+          }
+          title="abc"
+        />
+        <div
+          className="MuiCardContent-root"
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom"
+          >
+            Chilo Chilo
+          </h4>
+          <p
+            className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Wow! This was really an awesome some package the one you need
+          </p>
+        </div>
+        <span
+          className="MuiCardActionArea-focusHighlight"
+        />
+      </button>
+    </div>
+    <div
+      className="MuiPaper-root MuiCard-root makeStyles-root-4 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <button
+        className="MuiButtonBase-root MuiCardActionArea-root"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="MuiCardMedia-root makeStyles-media-5"
+          style={
+            Object {
+              "backgroundImage": "url(\\"./images/person.png\\")",
+            }
+          }
+          title="stu dsdofgfbgknkgmnkgmflddieuttwywhddgsgtwtwgsjospsosjsggdjfjkdppsksndbvcbcmcmxmznzhahwterefdgfjgkhphpo"
+        />
+        <div
+          className="MuiCardContent-root"
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom"
+          >
+            Emma Emma
+          </h4>
+          <p
+            className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Probably the most random thing you have ever seen!
+          </p>
+        </div>
+        <span
+          className="MuiCardActionArea-focusHighlight"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

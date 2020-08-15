@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create Image snapshot 1`] = `
+<div>
+  <div
+    className="makeStyles-box-1"
+  >
+    <img
+      alt="Laptop"
+      className="makeStyles-img-2"
+      src="./images/bg.jpg"
+    />
+    <div
+      className="makeStyles-loanPhrase-4"
+    >
+      <p
+        className="MuiTypography-root makeStyles-loanPhraseContent-5 MuiTypography-body1"
+      >
+        For your every need...
+      </p>
+    </div>
+    <div
+      className="makeStyles-description-6"
+    >
+      <p
+        className="MuiTypography-root makeStyles-descriptionPara1-7 MuiTypography-body1"
+      >
+        Loans that matter
+      </p>
+      <p
+        className="MuiTypography-root makeStyles-descriptionPara2-8 MuiTypography-body1"
+      >
+        Need a loan?
+      </p>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-descriptionPara3-9 MuiButton-containedPrimary"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          apply now
+        </span>
+      </button>
+    </div>
+    <div
+      className="makeStyles-content-12"
+    >
+      <div>
+        <p
+          className="MuiTypography-root makeStyles-contentHeader-10 MuiTypography-body1"
+        >
+          Home to fast loans...
+        </p>
+      </div>
+      <div
+        className="makeStyles-typography-11"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Quick Credit is an online lending platform
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          that provides short term soft loans to individuals.
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Helps solve problems of financial inclusion
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          as a way to alleviate poverty and empower
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          low income earners.
+        </p>
+      </div>
+      <div>
+        <p
+          className="MuiTypography-root makeStyles-desktopTypography-13 MuiTypography-body1"
+        >
+          Quick Credit is an online lending platform that provides short term soft loans to individuals. 
+  Helps solve problems of financial inclusion as a way to alleviate poverty and empower
+  low income earners.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

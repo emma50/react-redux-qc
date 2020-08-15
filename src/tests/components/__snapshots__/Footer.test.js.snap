@@ -1,0 +1,443 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create Footer snapshot 1`] = `
+<div>
+  <div
+    className="makeStyles-cta-10"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-ctaButton-11 MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        apply now
+      </span>
+    </button>
+  </div>
+  <div
+    className="makeStyles-root-12"
+  >
+    <div
+      className="makeStyles-paper-13"
+    >
+      <div
+        className="MuiGrid-root makeStyles-grid-14 MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <hr
+        className="MuiDivider-root makeStyles-divider-15"
+      />
+      <div
+        className="MuiGrid-root makeStyles-grid-14 MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <hr
+        className="MuiDivider-root makeStyles-divider-15"
+      />
+      <div
+        className="MuiGrid-root makeStyles-grid-14 MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <hr
+        className="MuiDivider-root makeStyles-divider-15"
+      />
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="makeStyles-desktopRoot-18"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3"
+      >
+        <p
+          className="MuiTypography-root makeStyles-textTransform-16 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+        <p
+          className="MuiTypography-root makeStyles-lineHeight-17 MuiTypography-body1"
+        >
+          hhfghfhdghhhdg
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBottomNavigation-root"
+    style={
+      Object {
+        "background": "#ede7f6",
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiBottomNavigationAction-root Mui-selected"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiBottomNavigationAction-wrapper"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"
+          />
+        </svg>
+        <span
+          className="MuiBottomNavigationAction-label Mui-selected"
+        >
+          Recents
+        </span>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiBottomNavigationAction-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiBottomNavigationAction-wrapper"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+          />
+        </svg>
+        <span
+          className="MuiBottomNavigationAction-label"
+        >
+          Favorites
+        </span>
+      </span>
+    </button>
+    <button
+      className="MuiButtonBase-root MuiBottomNavigationAction-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiBottomNavigationAction-wrapper"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+          />
+        </svg>
+        <span
+          className="MuiBottomNavigationAction-label"
+        >
+          Nearby
+        </span>
+      </span>
+    </button>
+  </div>
+  <hr
+    className="MuiDivider-root"
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ede7f6",
+      }
+    }
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      Copyright © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+        href="https://material-ui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Your Website
+      </a>
+       
+      2020
+      .
+    </p>
+  </div>
+</div>
+`;
