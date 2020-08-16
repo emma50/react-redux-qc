@@ -1,7 +1,14 @@
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import * as ACTION from './actionTypes';
 import location from '../helpers/location';
+import request from '../helpers/request';
+
+const baseURL = 'http://localhost:3000/api/v1';
+const createloanURL = `${baseURL}/loans`;
+const headers = {
+  headers: {'Content-Type': 'application/json'},
+  'x-auth-token': localStorage.getItem('token'),
+}
 
 const userapplyforloansuccessOption= {
   position: "top-right",
@@ -42,12 +49,7 @@ export const userApplyForLoan = (data) => {
       amount: loan.amount,
       tenor: loan.tenor,
     }
-    return axios.post('http://localhost:3000/api/v1/loans', body, {
-      headers: {
-        'Content-Type': 'application/json',
-        'x-auth-token': localStorage.getItem('token'),
-      },
-    },)
+    request.post(createloanURL, body, headers)
       .then((response) => {
         dispatch(userApplyForLoanSuccess(response.data));
         toast.success(response.data.message, userapplyforloansuccessOption)

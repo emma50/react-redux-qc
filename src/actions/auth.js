@@ -1,7 +1,15 @@
-import axios from 'axios';
+// import axios from 'axios';
 import * as ACTION from './actionTypes';
 import { toast } from 'react-toastify';
 import location from '../helpers/location';
+import request from '../helpers/request';
+
+const baseURL = 'http://localhost:3000/api/v1';
+const signupURL = `${baseURL}/auth/signup`;
+const signinURL = `${baseURL}/auth/signin`;
+const headers = {
+  headers: {'Content-Type': 'application/json'},
+}
 
 const signupOption = {
   position: "top-right",
@@ -52,8 +60,8 @@ export const userSignupFailure = (error) => ({
 
 export const signupUser = (data) => {
   return (dispatch) => {
-    const { firstName, lastName, email, password, address, mobileno } = data
-    const user = { firstName, lastName, email, password, address, mobileno }
+    const { firstName, lastName, email, password, address, mobileno, } = data
+    const user = { firstName, lastName, email, password, address, mobileno, }
     const body = {
       firstName: user.firstName,
       lastName: user.lastName,
@@ -62,9 +70,7 @@ export const signupUser = (data) => {
       address: user.address,
       mobileno: user.mobileno,
     }
-    return axios.post('http://localhost:3000/api/v1/auth/signup', body, {
-      headers: {'Content-Type': 'application/json'},
-    },)
+    request.post(signupURL, body, headers)
       .then((response) => {
         console.log(response)
         console.log(response.data);
@@ -74,15 +80,11 @@ export const signupUser = (data) => {
         console.log(error)
         console.log(error.response)
         if (error.response.data.message) {
-          dispatch(userSignupFailure(error.response.data.message, failureOption));
+          dispatch(userSignupFailure(error.response.data.message));
           toast.error(error.response.data.message, failureOption);
         }
-        if (error.response.data.error) {
-          dispatch(userSignupFailure(error.response.data.error, failureOption));
-          toast.error(error.response.data.error, failureOption);
-        }
-        // dispatch(userSignupFailure(error.response.data.error));
-        // toast.error(error.response.data.error, failureOption);
+        dispatch(userSignupFailure(error.response.data.error));
+        toast.error(error.response.data.error, failureOption);
       })
   }
 }
@@ -109,9 +111,7 @@ export const signinUser = (data) => {
       email: user.email,
       password: user.password,
     }
-    return axios.post('http://localhost:3000/api/v1/auth/signin', body, {
-      headers: {'Content-Type': 'application/json'},
-    },)
+    request.post(signinURL, body, headers)
       .then((response) => {
         dispatch(userSigninSuccess(response.data.data)); 
         toast.success(response.data.message, signinOption)
