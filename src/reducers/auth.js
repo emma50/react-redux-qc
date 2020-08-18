@@ -24,6 +24,16 @@ export default (state = initialState, action) => {
         ...state,
         action.error
       ]
+    case ACTIONS.ADMIN_VERIFY_USER_SUCCESS: 
+      return [
+        ...state,
+        action.user
+      ]
+    case ACTIONS.ADMIN_VERIFY_USER_FAILURE: 
+      return [
+        ...state,
+        action.error
+      ]
     default:
       return state
   }

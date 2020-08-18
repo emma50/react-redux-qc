@@ -11,6 +11,11 @@ const headers = {
   headers: {'Content-Type': 'application/json'},
 }
 
+const authHeaders = {
+  headers: {'Content-Type': 'application/json'},
+  'x-auth-token': localStorage.getItem('token'),
+}
+
 const signupOption = {
   position: "top-right",
   autoClose: 5000,
@@ -42,6 +47,17 @@ const signinOption = {
   draggable: true,
   progress: undefined,
   onClose: () => location('http://localhost:3001/'),
+}
+
+const verifiedOption = {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  onClose: () => location('http://localhost:3001/admindashboard'),
 }
 
 export const userSignupSuccess = (user) => {
@@ -121,6 +137,39 @@ export const signinUser = (data) => {
           toast.error(error.response.data.message, failureOption);
         }
         dispatch(userSigninFailure(error.response.data.error));
+        toast.error(error.response.data.error, failureOption);
+      })
+  }
+}
+
+export const adminVerifyUserSuccess = (user) => ({
+  type: ACTION.ADMIN_VERIFY_USER_SUCCESS,
+  user,
+})
+  
+export const adminVerifyUserFailure = (error) => ({
+  type: ACTION.ADMIN_VERIFY_USER_FAILURE,
+  error,
+})
+
+export const adminVerifyUser = (data) => {
+  return (dispatch, getState) => {
+    const useremail = getState().auth.email
+    const { status, } = data
+    const user = { status, }
+    const body = {
+      status: user.status,
+    }
+    request.post(`${baseURL}/users/${useremail}/verify`, body, authHeaders)
+      .then((response) => {
+        dispatch(adminVerifyUserSuccess(response.data.data)); 
+        toast.success(response.data.message, verifiedOption)
+      }).catch((error) => {
+        if (error.response.data.message) {
+          dispatch(adminVerifyUserFailure(error.response.data.message));
+          toast.error(error.response.data.message, failureOption);
+        }
+        dispatch(adminVerifyUserFailure(error.response.data.error));
         toast.error(error.response.data.error, failureOption);
       })
   }
