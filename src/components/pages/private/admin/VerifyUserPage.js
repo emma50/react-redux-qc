@@ -1,9 +1,9 @@
 import React from 'react';
 import { 
   useDispatch,
-  //useSelector 
+  // useSelector 
 } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
 import { joiResolver } from '@hookform/resolvers';
 import { ToastContainer} from 'react-toastify';
@@ -61,12 +61,14 @@ export default function AdminVerifyUser(props) {
   const { register, handleSubmit, errors, } = useForm({
     resolver: joiResolver(validateUserStatus)
   });
-  // const email = useSelector(state => state.auth.find((user) => user.email === props.match.params.email))
+  // const user = useSelector((state) => state.auth.find((user) => user.email === props.match.params.useremail))
+  // console.log(user)
   const dispatch = useDispatch();
   
   const onSubmit = (data, e) => {
     e.preventDefault();
-    dispatch(adminVerifyUser(data));
+    console.log(data)
+    dispatch(adminVerifyUser(props.match.params.useremail, data.status));
   }
 
   return (
@@ -85,7 +87,7 @@ export default function AdminVerifyUser(props) {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography>Verifying user with email: {props.match.params.email}</Typography>
+          <Typography>Verifying user with email: {props.match.params.useremail}</Typography>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
@@ -95,6 +97,7 @@ export default function AdminVerifyUser(props) {
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)} noValidate>
             {errors.status && <Typography className={classes.error}>{errors.status.message}</Typography>}
             <TextField
+              autoFocus
               inputRef={register}
               variant="outlined"
               margin="normal"
@@ -105,7 +108,6 @@ export default function AdminVerifyUser(props) {
               placeholder="must be verified or unverified"
               name="status"
               autoComplete="status"
-              autoFocus
             />
             <Button
               type="submit"
@@ -124,4 +126,10 @@ export default function AdminVerifyUser(props) {
       </Container>
     </div>
   );
+}
+
+AdminVerifyUser.propTypes = {
+  validateUserStatus: PropTypes.object,
+  adminVerifyUser: PropTypes.func,
+  status: PropTypes.string
 }

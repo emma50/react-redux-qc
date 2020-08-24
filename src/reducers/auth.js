@@ -25,10 +25,16 @@ export default (state = initialState, action) => {
         action.error
       ]
     case ACTIONS.ADMIN_VERIFY_USER_SUCCESS: 
-      return [
-        ...state,
-        action.user
-      ]
+      return state.map((user) => {
+        if (user.email === action.email) {
+            return {
+                ...user,
+                ...action.updates
+            }
+        } else {
+            return user
+        }
+      })
     case ACTIONS.ADMIN_VERIFY_USER_FAILURE: 
       return [
         ...state,
