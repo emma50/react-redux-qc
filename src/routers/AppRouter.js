@@ -4,6 +4,10 @@ import {
   Route, 
   Switch 
 } from "react-router-dom"
+import AdminRoute from './AdminRoute'
+import UserRoute from './UserRoute'
+import PublicRoute from './PublicRoute'
+
 const HomePage = lazy(() => import("../components/pages/public/HomePage"));
 const SignupPage = lazy(() => import("../components/pages/public/SignupPage"));
 const SigninPage = lazy(() => import("../components/pages/public/SigninPage"));
@@ -14,6 +18,28 @@ const UserDashboardPage = lazy(() => import('../components/pages/private/user/Da
 const VerifyUserPage = lazy(() => import('../components/pages/private/admin/VerifyUserPage'))
 
 const AppRouter = () => {
+  return (
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <PublicRoute path="/" component={HomePage} exact={true}/>
+          <PublicRoute path="/signup" component={SignupPage} exact={true}/>
+          <PublicRoute path="/signin" component={SigninPage} exact={true}/>
+          <PublicRoute path="/applyforloan" component={ApplyForLoanPage} exact={true}/>
+          <AdminRoute path="/admindashboard" component={AdminDashboardPage} exact={true}/>
+          <UserRoute path="/userdashboard" component={UserDashboardPage} exact={true}/>
+          <AdminRoute path="/:useremail/verify" component={VerifyUserPage} exact={true}/>
+          <Route component={NotFoundPage}/>
+        </Switch>
+      </Suspense>
+    </Router>
+  )
+}
+
+export default AppRouter;
+
+/**
+ * const AppRouter = () => {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
@@ -31,5 +57,4 @@ const AppRouter = () => {
     </Router>
   )
 }
-
-export default AppRouter;
+ */
